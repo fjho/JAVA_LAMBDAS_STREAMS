@@ -35,11 +35,13 @@ public class Fp01Functional {
         System.out.println("-----------------");
     }
 
+    @SuppressWarnings("unused")
     private static boolean isEven(int number) {
         return number % 2 == 0;
     }
 
-     private static void printSquareEvenNumbersInListFunctional(List<Integer> numbers) {
+    @SuppressWarnings("unused")
+    private static void printSquareEvenNumbersInListFunctional(List<Integer> numbers) {
         //filter - only even numbers
         numbers.stream()
                .filter(number -> number % 2 == 0) //lambda expression

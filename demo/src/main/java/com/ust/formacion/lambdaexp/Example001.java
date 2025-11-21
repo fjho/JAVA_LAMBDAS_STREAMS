@@ -1,6 +1,5 @@
 package com.ust.formacion.lambdaexp;
 
-import java.io.FileFilter;
 import java.util.List;
 
 public class Example001 {

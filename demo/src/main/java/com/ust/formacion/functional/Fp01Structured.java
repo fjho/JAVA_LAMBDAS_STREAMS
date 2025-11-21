@@ -10,7 +10,8 @@ public class Fp01Structured {
         
         printEvenNumbersInListStructured(numbers);
     }  
-    
+
+    @SuppressWarnings("unused")
     private static void printAllNumbersInListStructured(List<Integer> numbers) {
         for (int number : numbers) {
             System.out.println(number);
