@@ -52,15 +52,15 @@ public class FP04BehaviorParametrization {
         ((java.util.function.Consumer<Integer>) n -> print(n)).accept(10);
     }
 
-    private static void printNumbersWithPredicate(List<Integer> numbers, Predicate<Integer> condition) {
+    private static void printNumbersWithPredicate(List<Integer> numbers, Predicate<Integer> predicate) {
         numbers.stream()
-            .filter(condition)
+            .filter(predicate)
             .forEach(System.out::println);
     }
 
-    private static List<Integer> listNumbersWithFunction(List<Integer> numbers, Function<Integer, Integer> mapper) {
+    private static List<Integer> listNumbersWithFunction(List<Integer> numbers, Function<Integer, Integer> function) {
         return numbers.stream()
-            .map(mapper)
+            .map(function)
             .collect(Collectors.toList());
     }
 
