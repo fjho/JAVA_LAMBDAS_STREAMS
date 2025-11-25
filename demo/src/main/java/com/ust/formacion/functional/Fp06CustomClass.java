@@ -243,5 +243,17 @@ public class Fp06CustomClass {
                 Collectors.mapping(CourseDetailed::getName, Collectors.toList())))
         );
         System.out.println("--------29---------");
+
+
+
+
+        System.out.println("--------HIGHER ORDER FUNCTIONS---------");
+
+        Predicate<CourseDetailed> predicateReviewScoreMoreThan95 = createReviewScorePredicate(95);
+        Predicate<CourseDetailed> predicateReviewScoreMoreThan75 = createReviewScorePredicate(75);
+    }
+
+    private static Predicate<CourseDetailed> createReviewScorePredicate(int cutOffReviewScore) {
+        return course -> course.getReviewScore() > cutOffReviewScore;
     }
 }
