@@ -66,11 +66,13 @@ public class Fp07InitializingStreams {
         //INITIALIZATIONS OF STREAMS
         System.out.println("-------------------------------INITIALIZATIONS OF STREAMS-------------------------------");
             //initialize stream with List.of()
+            System.out.println("-------------------------------List.of()-------------------------------");
             System.out.println("Max: "+List.of(12,9,13,4,6,2,4,12,15).stream().peek(System.out::println).max(Integer::compare));
 
             System.out.println("-------------------------------");
 
             //initialize stream with Stream.of()
+            System.out.println("-------------------------------Stream.of()-------------------------------");
             System.out.println("Max: "+Stream.of(12,9,13,4,6,2,4,12,15).peek(System.out::println).max(Integer::compare));
             Stream.of(new CourseDetailed2("Java", "Programming", 95, 2000)).forEach(System.out::println);
             
@@ -78,9 +80,32 @@ public class Fp07InitializingStreams {
 
             //initialize stream with Arrays.stream()
             //no need to box/unbox Integer to int or viceversa
+            System.out.println("-------------------------------Arrays.stream()-------------------------------");
             int[] numbersArray = {12,9,13,4,6,2,4,12,15};
             System.out.println("Max: "+Arrays.stream(numbersArray).peek(System.out::println).max());
 
+            System.out.println("-------------------------------");
+
+            //initialize stream with Stream.builder()
+            System.out.println("-------------------------------Stream.builder()-------------------------------");
+            Stream<Integer> streamBuilder = Stream.<Integer>builder()
+                                                    .add(12)
+                                                    .add(9)
+                                                    .add(13)
+                                                    .add(4)
+                                                    .add(6)
+                                                    .add(2)
+                                                    .add(4)
+                                                    .add(12)
+                                                    .add(15)
+                                                    .build();
+            System.out.println("Max: "+streamBuilder.peek(System.out::println).max(Integer::compare));
+            System.out.println("-------------------------------");
+
+            //Initialize stream with Stream.generate()
+            System.out.println("-------------------------------Stream.generate()-------------------------------");
+            Stream<String> streamGenerate = Stream.generate(() -> "element").limit(5);
+            streamGenerate.forEach(System.out::println);
             System.out.println("-------------------------------");
 
             //initialize stream with IntStream.range() and IntStream.rangeClosed()
